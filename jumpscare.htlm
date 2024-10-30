@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vidéo Jumpscare</title>
+    <style>
+        #jumpscareVideo {
+            display: none;
+            width: 600px;
+            height: 400px;
+        }
+    </style>
 </head>
 <body>
     <h1>Cliquez sur le lien pour voir la vidéo !</h1>
     <a href="#" id="playVideo">Clique ici pour lancer la vidéo</a>
-    <video id="jumpscareVideo" width="600" style="display:none;">
-        <source src="https://youtu.be/ekFLaTC0D5c?si=5kSYcuHCSDiovpNC" type="video/mp4">
-        Votre navigateur ne prend pas en charge la vidéo.
-    </video>
+    <iframe id="jumpscareVideo" src="" frameborder="0" allowfullscreen></iframe>
 
     <script>
         document.getElementById('playVideo').onclick = function() {
             const video = document.getElementById('jumpscareVideo');
+            video.src = "https://www.youtube.com/embed/ekFLaTC0D5c?autoplay=1"; // Modifie le lien ici
             video.style.display = 'block';
-            video.play();
         };
     </script>
 </body>
